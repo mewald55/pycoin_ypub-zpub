@@ -5,7 +5,6 @@ from .bignum import bignum_type_for_library, bignum_context_for_library
 
 
 LOCALS = threading.local()
-NID_secp256k1_GROUP = None
 
 
 def thread_bignum_context(library):
@@ -60,19 +59,17 @@ def load_library():
     set_api(library, BIGNUM_API)
     set_api(library, ECC_API)
 
-    # TODO: don't use a global
-    global NID_secp256k1_GROUP
-    NID_secp256k1_GROUP = library.EC_GROUP_new_by_curve_name(714)
     return library
 
 
 def make_fast_mul_f(library):
+    NID_secp256k1_GROUP = library.EC_GROUP_new_by_curve_name(714)
     def fast_mul(point, N):
         bn_x = library.BignumType(point.x())
         bn_y = library.BignumType(point.y())
         bn_n = library.BignumType(N)
 
-        ctx = thread_bignum_context(library)
+        ctx = library.BN_CTX_new() #thread_bignum_context(library)
         ec_result = library.EC_POINT_new(NID_secp256k1_GROUP)
         ec_point = library.EC_POINT_new(NID_secp256k1_GROUP)
 
@@ -83,13 +80,16 @@ def make_fast_mul_f(library):
         library.EC_POINT_get_affine_coordinates_GFp(NID_secp256k1_GROUP, ec_result, bn_x, bn_y, ctx)
         library.EC_POINT_free(ec_point)
         library.EC_POINT_free(ec_result)
+        library.BN_CTX_free(ctx)
         return type(point)(point.curve(), int(bn_x), int(bn_y))
     return fast_mul
 
 
 def make_inverse_mod_f(library):
     def inverse_mod(a, n):
+        ctx = library.BN_CTX_new() #thread_bignum_context(library)
         a1 = library.BignumType(a)
-        library.BN_mod_inverse(a1, a1, library.BignumType(n), thread_bignum_context(library))
+        library.BN_mod_inverse(a1, a1, library.BignumType(n), ctx)
+        library.BN_CTX_free(ctx)
         return int(a1)
     return inverse_mod

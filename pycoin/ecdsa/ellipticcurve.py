@@ -65,6 +65,9 @@ class CurveFp( object ):
     return 'y^2 = x^3 + {}*x + {} (mod {})'.format(self.__a, self.__b, self.__p)
 
 
+from pycoin.ecdsa.native.library import load_library, make_fast_mul_f
+fast_mul = make_fast_mul_f(load_library())
+
 class Point( object ):
   """A point on an elliptic curve. Altering x and y is forbidden,
      but they can be read by the x() and y() methods."""
@@ -128,6 +131,8 @@ class Point( object ):
     assert e > 0
 
     # From X9.62 D.3.2:
+
+    return fast_mul(self, other)
 
     e3 = 3 * e
     negative_self = Point( self.__curve, self.__x, -self.__y, self.__order )

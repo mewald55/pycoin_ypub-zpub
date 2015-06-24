@@ -19,6 +19,12 @@ def inverse_mod( a, m ):
   if ud > 0: return ud
   else: return ud + m
 
+
+from pycoin.ecdsa.native.library import load_library, make_inverse_mod_f, make_fast_mul_f
+library = load_library()
+inverse_mod = make_inverse_mod_f(library)
+
+
 # from http://eli.thegreenplace.net/2009/03/07/computing-modular-square-roots-in-python/
 
 def modular_sqrt(a, p):
