@@ -1,10 +1,14 @@
 import ctypes.util
 import threading
 
-from .bignum import bignum_type_for_library, bignum_context_for_library
+from .bignum import bignum_type_for_library
 
 
 LOCALS = threading.local()
+
+
+class BignumContext(ctypes.Structure):
+    pass
 
 
 def thread_bignum_context(library):
@@ -28,10 +32,9 @@ def load_library():
     library = ctypes.CDLL(library_path)
 
     library.BignumType = bignum_type_for_library(library)
-    library.BignumContext = bignum_context_for_library(library)
 
     BN_P = ctypes.POINTER(library.BignumType)
-    BN_CTX = ctypes.POINTER(library.BignumContext)
+    BN_CTX = ctypes.POINTER(BignumContext)
 
     BIGNUM_API = [
         ("BN_init", [BN_P], None),

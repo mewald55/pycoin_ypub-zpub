@@ -61,10 +61,3 @@ def bignum_type_for_library(library):
         def __repr__(self):
             return "BignumType(%d)" % int(self)
     return BignumType
-
-
-def bignum_context_for_library(library):
-    class BignumContext(ctypes.Structure):
-        def __del__(self):
-            library.BN_CTX_free(self)
-    return BignumContext
