@@ -41,6 +41,9 @@ def bignum_type_for_library(library):
             the_bytes = struct.pack(">L", the_len+1) + sign + to_bytes(n, the_len, "big")
             library.BN_mpi2bn(the_bytes, the_len + 5, self)
 
+        def __del__(self):
+            library.BN_clear_free(self)
+
         def __int__(self):
             "Return this bignum's value as a Python integer."
             value, factor = 0, 1
@@ -50,9 +53,6 @@ def bignum_type_for_library(library):
             if self.neg:
                 value = -value
             return value
-
-        def __del__(self):
-            library.BN_clear_free(self)
 
         def datawords(self):
             "Yield the words in the little-endian data array."

@@ -1,3 +1,5 @@
+from .native.library import load_library, make_inverse_mod_f
+
 
 def inverse_mod( a, m ):
   """Inverse of a mod m."""
@@ -20,9 +22,9 @@ def inverse_mod( a, m ):
   else: return ud + m
 
 
-from pycoin.ecdsa.native.library import load_library, make_inverse_mod_f, make_fast_mul_f
-library = load_library()
-inverse_mod = make_inverse_mod_f(library)
+native_inverse_mod = make_inverse_mod_f(load_library())
+if native_inverse_mod:
+    inverse_mod = native_inverse_mod
 
 
 # from http://eli.thegreenplace.net/2009/03/07/computing-modular-square-roots-in-python/

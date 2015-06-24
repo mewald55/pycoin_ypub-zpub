@@ -1,20 +1,10 @@
 import ctypes.util
-import threading
 
 from .bignum import bignum_type_for_library
 
 
-LOCALS = threading.local()
-
-
 class BignumContext(ctypes.Structure):
     pass
-
-
-def thread_bignum_context(library):
-    if not hasattr(LOCALS, "bn_ctx"):
-        LOCALS.bn_ctx = library.BN_CTX_new()
-    return LOCALS.bn_ctx
 
 
 def set_api(library, api_info):
@@ -72,7 +62,7 @@ def make_fast_mul_f(library):
         bn_y = library.BignumType(point.y())
         bn_n = library.BignumType(N)
 
-        ctx = library.BN_CTX_new() #thread_bignum_context(library)
+        ctx = library.BN_CTX_new()
         ec_result = library.EC_POINT_new(NID_secp256k1_GROUP)
         ec_point = library.EC_POINT_new(NID_secp256k1_GROUP)
 
@@ -90,7 +80,7 @@ def make_fast_mul_f(library):
 
 def make_inverse_mod_f(library):
     def inverse_mod(a, n):
-        ctx = library.BN_CTX_new() #thread_bignum_context(library)
+        ctx = library.BN_CTX_new()
         a1 = library.BignumType(a)
         library.BN_mod_inverse(a1, a1, library.BignumType(n), ctx)
         library.BN_CTX_free(ctx)
