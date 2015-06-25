@@ -74,7 +74,7 @@ def make_fast_mul_f(library):
         library.EC_POINT_free(ec_point)
         library.EC_POINT_free(ec_result)
         library.BN_CTX_free(ctx)
-        return type(point)(point.curve(), int(bn_x), int(bn_y))
+        return type(point)(point.curve(), bn_x.to_int(), bn_y.to_int())
     return fast_mul
 
 
@@ -84,5 +84,5 @@ def make_inverse_mod_f(library):
         a1 = library.BignumType(a)
         library.BN_mod_inverse(a1, a1, library.BignumType(n), ctx)
         library.BN_CTX_free(ctx)
-        return int(a1)
+        return a1.to_int()
     return inverse_mod

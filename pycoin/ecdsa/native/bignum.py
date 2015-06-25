@@ -45,6 +45,9 @@ def bignum_type_for_library(library):
             library.BN_clear_free(self)
 
         def __int__(self):
+            return self.as_int()
+
+        def to_int(self):
             "Return this bignum's value as a Python integer."
             value, factor = 0, 1
             for w in self.datawords():
@@ -59,5 +62,5 @@ def bignum_type_for_library(library):
             return (self.d[k] for k in range(self.top))
 
         def __repr__(self):
-            return "BignumType(%d)" % int(self)
+            return "BignumType(%d)" % self.to_int()
     return BignumType
