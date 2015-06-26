@@ -1,4 +1,4 @@
-from .native.library import load_library, make_inverse_mod_f
+from .native.library import NATIVE_LIBRARY
 
 
 def inverse_mod( a, m ):
@@ -22,9 +22,8 @@ def inverse_mod( a, m ):
   else: return ud + m
 
 
-native_inverse_mod = make_inverse_mod_f(load_library())
-if native_inverse_mod:
-    inverse_mod = native_inverse_mod
+if NATIVE_LIBRARY:
+    inverse_mod = NATIVE_LIBRARY.inverse_mod
 
 
 # from http://eli.thegreenplace.net/2009/03/07/computing-modular-square-roots-in-python/

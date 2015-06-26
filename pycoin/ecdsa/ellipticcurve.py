@@ -34,8 +34,7 @@
 
 from . import numbertheory
 
-from .native.library import load_library, make_fast_mul_f
-native_mul = make_fast_mul_f(load_library())
+from .native.library import NATIVE_LIBRARY
 
 
 class NoSuchPointError(ValueError): pass
@@ -133,8 +132,8 @@ class Point( object ):
 
     # From X9.62 D.3.2:
 
-    if native_mul:
-        return native_mul(self, other)
+    if NATIVE_LIBRARY:
+        return NATIVE_LIBRARY.fast_mul(self, other)
 
     e3 = 3 * e
     negative_self = Point( self.__curve, self.__x, -self.__y, self.__order )

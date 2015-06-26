@@ -51,7 +51,6 @@ def load_library():
     ]
     set_api(library, BIGNUM_API)
     set_api(library, ECC_API)
-
     return library
 
 
@@ -86,3 +85,8 @@ def make_inverse_mod_f(library):
         library.BN_CTX_free(ctx)
         return a1.to_int()
     return inverse_mod
+
+
+NATIVE_LIBRARY = load_library()
+NATIVE_LIBRARY.fast_mul = make_fast_mul_f(NATIVE_LIBRARY)
+NATIVE_LIBRARY.inverse_mod = make_inverse_mod_f(NATIVE_LIBRARY)
