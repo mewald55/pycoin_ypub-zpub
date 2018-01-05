@@ -85,7 +85,7 @@ class ScriptPayToAddressWit(ScriptType):
             from pycoin.networks.default import get_current_netcode
             if netcode is None:
                 netcode = get_current_netcode()
-
+             
             bech32_hrp = bech32_hrp_for_netcode(netcode)
             if bech32_hrp:
                 return segwit_addr.encode(bech32_hrp, self.version, iterbytes(self.hash160))

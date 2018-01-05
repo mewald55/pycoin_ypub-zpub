@@ -58,6 +58,19 @@ BUILT_IN_NETWORKS = [
         ],
         bech32_hrp='tb'
     ),
+    
+    # BTC bitcoin testnet : vprv/vpub
+    Network(
+        "XTNZ", "Bitcoin", "testnet3_segwit_native",
+        b'\xef', b'\x6f', b'\xc4', h2b("045f18bc"), h2b("045f1cf6"),
+        BitcoinTx, BitcoinBlock,
+        h2b('0B110907'), 18333, [
+            "bitcoin.petertodd.org", "testnet-seed.bitcoin.petertodd.org",
+            "bluematt.me", "testnet-seed.bluematt.me"
+        ],
+        bech32_hrp='tb',
+        address_wit=True
+    ),
 
     # LTC litecoin mainnet : Ltpv/Ltub
     Network(
