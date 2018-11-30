@@ -1,16 +1,16 @@
-from pycoin.ecdsa.secp256k1 import secp256k1_generator
-from pycoin.encoding import EncodingError, a2b_hashed_base58, \
+from pycoinzpub.ecdsa.secp256k1 import secp256k1_generator
+from pycoinzpub.encoding import EncodingError, a2b_hashed_base58, \
     from_bytes_32, hash160, hash160_sec_to_bitcoin_address, \
     is_sec_compressed, public_pair_to_sec, public_pair_to_hash160_sec, \
     sec_to_public_pair, secret_exponent_to_wif
-from pycoin.key.validate import netcode_and_type_for_data
-from pycoin.networks import address_prefix_for_netcode, wif_prefix_for_netcode, \
+from pycoinzpub.key.validate import netcode_and_type_for_data
+from pycoinzpub.networks import address_prefix_for_netcode, wif_prefix_for_netcode, \
   pay_to_script_wit_for_netcode, pay_to_script_prefix_for_netcode, \
   address_wit_for_netcode
-from pycoin.networks.default import get_current_netcode
-from pycoin.serialize import b2h
-from pycoin.tx.script.der import sigencode_der, sigdecode_der
-from  pycoin.tx.pay_to.ScriptPayToAddressWit import ScriptPayToAddressWit
+from pycoinzpub.networks.default import get_current_netcode
+from pycoinzpub.serialize import b2h
+from pycoinzpub.tx.script.der import sigencode_der, sigdecode_der
+from  pycoinzpub.tx.pay_to.ScriptPayToAddressWit import ScriptPayToAddressWit
 
 
 class InvalidPublicPairError(ValueError):
