@@ -6,7 +6,7 @@ from pycoin.version import version
 
 setup(
     name="pycoin_ypub-zpub",
-    version=version,
+    version=100,
     packages=[
         "pycoin",
         "pycoin.blockchain",
