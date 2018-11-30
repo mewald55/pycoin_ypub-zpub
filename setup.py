@@ -5,7 +5,7 @@ from setuptools import setup
 from pycoin.version import version
 
 setup(
-    name="pycoin",
+    name="pycoin_ypub-zpub",
     version=version,
     packages=[
         "pycoin",
