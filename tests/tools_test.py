@@ -1,10 +1,10 @@
 import unittest
 
-from pycoin.serialize import h2b
-from pycoin.intbytes import int2byte
-from pycoin.tx.script.tools import bin_script, compile, disassemble, int_to_script_bytes, int_from_script_bytes
-from pycoin.tx.script.opcodes import INT_TO_OPCODE, OPCODE_LIST
-from pycoin.tx.script.vm import eval_script
+from pycoinzpub.serialize import h2b
+from pycoinzpub.intbytes import int2byte
+from pycoinzpub.tx.script.tools import bin_script, compile, disassemble, int_to_script_bytes, int_from_script_bytes
+from pycoinzpub.tx.script.opcodes import INT_TO_OPCODE, OPCODE_LIST
+from pycoinzpub.tx.script.vm import eval_script
 
 
 class ToolsTest(unittest.TestCase):

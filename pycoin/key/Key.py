@@ -10,7 +10,7 @@ from pycoinzpub.networks import address_prefix_for_netcode, wif_prefix_for_netco
 from pycoinzpub.networks.default import get_current_netcode
 from pycoinzpub.serialize import b2h
 from pycoinzpub.tx.script.der import sigencode_der, sigdecode_der
-from  pycoinzpub.tx.pay_to.ScriptPayToAddressWit import ScriptPayToAddressWit
+from pycoinzpub.tx.pay_to.ScriptPayToAddressWit import ScriptPayToAddressWit
 
 
 class InvalidPublicPairError(ValueError):
@@ -93,7 +93,7 @@ class Key(object):
 
         if key_type in ("pub32", "prv32"):
             # TODO: fix this... it doesn't belong here
-            from pycoin.key.BIP32Node import BIP32Node
+            from pycoinzpub.key.BIP32Node import BIP32Node
             return BIP32Node.from_wallet_key(text)
 
         if key_type == 'wif':

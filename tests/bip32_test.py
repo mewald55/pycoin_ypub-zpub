@@ -1,6 +1,6 @@
 import unittest
-from pycoin.key.BIP32Node import BIP32Node
-from pycoin.serialize import h2b
+from pycoinzpub.key.BIP32Node import BIP32Node
+from pycoinzpub.serialize import h2b
 
 
 class Bip0032TestCase(unittest.TestCase):
@@ -238,7 +238,7 @@ class Bip0032TestCase(unittest.TestCase):
         self.assertRaises(ValueError, list, my_prv.subkeys('-1-0'))
 
     def test_repr(self):
-        from pycoin.key import Key
+        from pycoinzpub.key import Key
         netcode = 'XTN'
         key = Key(secret_exponent=273, netcode=netcode)
         wallet = BIP32Node.from_master_secret(bytes(key.wif().encode('ascii')), netcode)
@@ -253,7 +253,7 @@ class Bip0032TestCase(unittest.TestCase):
                          'private_for <03ad094b1dc9fdce5d3648ca359b4e210a89d049532fdd39d9ccdd8ca393ac82f4>')
 
     def test_p2wpkh_in_p2sh(self):
-        from pycoin.key import Key
+        from pycoinzpub.key import Key
         node = Key.from_text('ypub6XDth9u8DzXV1tcpDtoDKMf6kVMaVMn1juVWEesTshcX4zUVvfNgjPJLXrD9N7AdTLnbHFL64KmBn3SNaTe69iZYbYCqLCCNPZKbLz9niQ4')
         self.assertEqual(node.subkey(0).subkey(0).address(),
                          '35ohQTdNykjkF1Mn9nAVEFjupyAtsPAK1W')
@@ -261,7 +261,7 @@ class Bip0032TestCase(unittest.TestCase):
                          '3KaBTcviBLEJajTEMstsA2GWjYoPzPK7Y7')
     
     def test_p2wpkh_native(self):
-        from pycoin.key import Key
+        from pycoinzpub.key import Key
         node = Key.from_text('zpub6nsHdRuY92FsMKdbn9BfjBCG6X8pyhCibNP6uDvpnw2cyrVhecvHRMa3Ne8kdJZxjxgwnpbHLkcR4bfnhHy6auHPJyDTQ3kianeuVLdkCYQ')
         self.assertEqual(node.subkey(0).subkey(0).address(),
                          'bc1q3g5tmkmlvxryhh843v4dz026avatc0zzr6h3af')

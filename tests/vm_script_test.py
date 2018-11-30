@@ -2,13 +2,13 @@ import json
 import unittest
 import os
 
-from pycoin.serialize import h2b
-from pycoin.tx.Tx import TxIn, TxOut, Tx
-from pycoin.tx.script import ScriptError
-from pycoin.tx.script import errno
-from pycoin.tx.script import flags
-from pycoin.tx.script.tools import compile, disassemble
-from pycoin.tx.script.vm import check_script
+from pycoinzpub.serialize import h2b
+from pycoinzpub.tx.Tx import TxIn, TxOut, Tx
+from pycoinzpub.tx.script import ScriptError
+from pycoinzpub.tx.script import errno
+from pycoinzpub.tx.script import flags
+from pycoinzpub.tx.script.tools import compile, disassemble
+from pycoinzpub.tx.script.vm import check_script
 
 
 SCRIPT_TESTS_JSON = os.path.dirname(__file__) + '/data/script_tests.json'
@@ -52,7 +52,7 @@ def dump_failure_info(spend_tx, script_in, script_out, flags, flags_string, expe
 
     def tbf(*args):
         pc, opcode, data, stack, altstack, is_signature, is_condition = args
-        from pycoin.tx.script.tools import disassemble_for_opcode_data
+        from pycoinzpub.tx.script.tools import disassemble_for_opcode_data
         opd = disassemble_for_opcode_data(opcode, data)
         if len(altstack) == 0:
             altstack = ''

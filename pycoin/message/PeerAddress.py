@@ -1,9 +1,9 @@
 import functools
 import struct
 
-from pycoin.intbytes import iterbytes
-from pycoin.serialize import h2b
-from pycoin.serialize.bitcoin_streamer import parse_struct
+from pycoinzpub.intbytes import iterbytes
+from pycoinzpub.serialize import h2b
+from pycoinzpub.serialize.bitcoin_streamer import parse_struct
 
 
 IP4_HEADER = h2b("00000000000000000000FFFF")

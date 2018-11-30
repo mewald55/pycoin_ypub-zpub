@@ -2,8 +2,8 @@
 from .network import Network
 from .legacy_networks import NETWORKS
 
-from pycoin.tx.Tx import Tx as BitcoinTx
-from pycoin.block import Block as BitcoinBlock
+from pycoinzpub.tx.Tx import Tx as BitcoinTx
+from pycoinzpub.block import Block as BitcoinBlock
 
 from ..serialize import h2b
 

@@ -51,8 +51,8 @@ class ScriptPayToScript(ScriptType):
         return self._script
 
     def address(self, netcode=None):
-        from pycoin.networks import pay_to_script_prefix_for_netcode
-        from pycoin.networks.default import get_current_netcode
+        from pycoinzpub.networks import pay_to_script_prefix_for_netcode
+        from pycoinzpub.networks.default import get_current_netcode
         if netcode is None:
             netcode = get_current_netcode()
         address_prefix = pay_to_script_prefix_for_netcode(netcode)

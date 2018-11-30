@@ -1,5 +1,5 @@
 
-from pycoin.blockchain.ChainFinder import ChainFinder
+from pycoinzpub.blockchain.ChainFinder import ChainFinder
 
 
 class BHO(object):

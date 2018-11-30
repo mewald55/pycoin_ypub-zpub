@@ -2,10 +2,10 @@ import binascii
 import io
 import unittest
 
-from pycoin.block import Block
-from pycoin.serialize import h2b
-from pycoin.tx.script import tools
-from pycoin.tx.Tx import Tx
+from pycoinzpub.block import Block
+from pycoinzpub.serialize import h2b
+from pycoinzpub.tx.script import tools
+from pycoinzpub.tx.Tx import Tx
 
 
 class ValidatingTest(unittest.TestCase):

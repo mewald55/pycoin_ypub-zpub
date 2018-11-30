@@ -1,5 +1,5 @@
-from pycoin.serialize import b2h, b2h_rev
-from pycoin.tx.Tx import Tx
+from pycoinzpub.serialize import b2h, b2h_rev
+from pycoinzpub.tx.Tx import Tx
 
 
 class BitcoindProvider(object):

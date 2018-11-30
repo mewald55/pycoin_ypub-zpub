@@ -6,8 +6,8 @@ from ctypes import (
     byref, c_byte, c_int, c_uint, c_char_p, c_size_t, c_void_p, create_string_buffer, CFUNCTYPE, POINTER
 )
 
-from pycoin.encoding import from_bytes_32, to_bytes_32
-from pycoin.intbytes import iterbytes
+from pycoinzpub.encoding import from_bytes_32, to_bytes_32
+from pycoinzpub.intbytes import iterbytes
 
 
 SECP256K1_FLAGS_TYPE_MASK = ((1 << 8) - 1)

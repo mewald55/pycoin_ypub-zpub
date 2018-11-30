@@ -1,8 +1,8 @@
 import binascii
 import unittest
 
-from pycoin.serialize import b2h, h2b_rev
-from pycoin.tx.Tx import Tx
+from pycoinzpub.serialize import b2h, h2b_rev
+from pycoinzpub.tx.Tx import Tx
 
 TX_E1A18B843FC420734DEEB68FF6DF041A2585E1A0D7DBF3B82AAB98291A6D9952_HEX = (
     "0100000001a8f57056b016d7d243fc0fc2a73f9146e7e4c7766ec6033b5ac4cb89c64e"

@@ -1,17 +1,17 @@
 import io
 import unittest
 
-from pycoin.block import Block
+from pycoinzpub.block import Block
 
-from pycoin.ecdsa.secp256k1 import secp256k1_generator
-from pycoin.encoding import public_pair_to_sec, public_pair_to_bitcoin_address, wif_to_secret_exponent
-from pycoin.serialize import h2b
+from pycoinzpub.ecdsa.secp256k1 import secp256k1_generator
+from pycoinzpub.encoding import public_pair_to_sec, public_pair_to_bitcoin_address, wif_to_secret_exponent
+from pycoinzpub.serialize import h2b
 
-from pycoin.tx.Tx import Tx, SIGHASH_ALL
-from pycoin.tx.TxIn import TxIn
-from pycoin.tx.TxOut import TxOut
-from pycoin.tx.pay_to import build_hash160_lookup
-from pycoin.ui import standard_tx_out_script
+from pycoinzpub.tx.Tx import Tx, SIGHASH_ALL
+from pycoinzpub.tx.TxIn import TxIn
+from pycoinzpub.tx.TxOut import TxOut
+from pycoinzpub.tx.pay_to import build_hash160_lookup
+from pycoinzpub.ui import standard_tx_out_script
 
 
 # block 80971

@@ -2,7 +2,7 @@
 
 from setuptools import setup
 
-from pycoin.version import version
+from pycoinzpub.version import version
 
 setup(
     name="pycoin_ypub-zpub",

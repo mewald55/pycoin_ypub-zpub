@@ -1,16 +1,16 @@
 import io
 import unittest
 
-from pycoin.block import Block
-from pycoin.message.make_parser_and_packer import (
+from pycoinzpub.block import Block
+from pycoinzpub.message.make_parser_and_packer import (
     make_parser_and_packer, standard_messages, standard_message_post_unpacks,
     standard_parsing_functions, standard_streamer
 )
-from pycoin.message.PeerAddress import ip_bin_to_ip4_addr, ip_bin_to_ip6_addr, PeerAddress, IP4_HEADER
-from pycoin.message.InvItem import InvItem, ITEM_TYPE_BLOCK, ITEM_TYPE_TX
+from pycoinzpub.message.PeerAddress import ip_bin_to_ip4_addr, ip_bin_to_ip6_addr, PeerAddress, IP4_HEADER
+from pycoinzpub.message.InvItem import InvItem, ITEM_TYPE_BLOCK, ITEM_TYPE_TX
 
-from pycoin.serialize import h2b
-from pycoin.tx.Tx import Tx
+from pycoinzpub.serialize import h2b
+from pycoinzpub.tx.Tx import Tx
 
 
 def to_bin(obj):

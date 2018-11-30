@@ -4,8 +4,8 @@ import warnings
 
 from .agent import request, urlencode, urlopen
 
-from pycoin.serialize import b2h, h2b, b2h_rev
-from pycoin.tx.Tx import Spendable, Tx
+from pycoinzpub.serialize import b2h, h2b, b2h_rev
+from pycoinzpub.tx.Tx import Spendable, Tx
 
 
 class BlockchainInfoProvider(object):

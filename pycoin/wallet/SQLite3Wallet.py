@@ -1,7 +1,7 @@
 from threading import RLock
 
-from pycoin.convention.tx_fee import TX_FEE_PER_THOUSAND_BYTES
-from pycoin.tx.tx_utils import create_tx
+from pycoinzpub.convention.tx_fee import TX_FEE_PER_THOUSAND_BYTES
+from pycoinzpub.tx.tx_utils import create_tx
 
 
 class SQLite3Wallet(object):

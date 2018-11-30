@@ -1,7 +1,7 @@
 import unittest
 import tempfile
 
-from pycoin.serialize import h2b
+from pycoinzpub.serialize import h2b
 
 from .ToolTest import ToolTest
 

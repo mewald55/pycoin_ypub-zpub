@@ -3,9 +3,9 @@ import platform
 import struct
 import os
 
-from pycoin.block import Block
-from pycoin.blockchain.BlockChain import BlockChain
-from pycoin.serialize import h2b
+from pycoinzpub.block import Block
+from pycoinzpub.blockchain.BlockChain import BlockChain
+from pycoinzpub.serialize import h2b
 
 
 logger = logging.getLogger(__file__)

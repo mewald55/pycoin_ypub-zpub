@@ -1,13 +1,13 @@
 import unittest
 
-from pycoin.encoding import double_sha256, to_bytes_32
-from pycoin.key import Key
-from pycoin.serialize import b2h, b2h_rev, h2b
-from pycoin.tx.pay_to import build_hash160_lookup, build_p2sh_lookup
-from pycoin.tx.script import tools
-from pycoin.tx.Tx import SIGHASH_ALL, SIGHASH_SINGLE, SIGHASH_NONE, SIGHASH_ANYONECANPAY, Tx
-from pycoin.tx.TxOut import TxOut
-from pycoin.tx.tx_utils import LazySecretExponentDB
+from pycoinzpub.encoding import double_sha256, to_bytes_32
+from pycoinzpub.key import Key
+from pycoinzpub.serialize import b2h, b2h_rev, h2b
+from pycoinzpub.tx.pay_to import build_hash160_lookup, build_p2sh_lookup
+from pycoinzpub.tx.script import tools
+from pycoinzpub.tx.Tx import SIGHASH_ALL, SIGHASH_SINGLE, SIGHASH_NONE, SIGHASH_ANYONECANPAY, Tx
+from pycoinzpub.tx.TxOut import TxOut
+from pycoinzpub.tx.tx_utils import LazySecretExponentDB
 
 
 class SegwitTest(unittest.TestCase):
@@ -433,19 +433,19 @@ class SegwitTest(unittest.TestCase):
 
     def test_segwit_ui(self):
         # p2wpkh
-        from pycoin.ui import script_obj_from_address
-        from pycoin.tx.pay_to.ScriptPayToAddressWit import ScriptPayToAddressWit
+        from pycoinzpub.ui import script_obj_from_address
+        from pycoinzpub.tx.pay_to.ScriptPayToAddressWit import ScriptPayToAddressWit
         address = 'bc1qqyykvamqq62n64t8gw09uw0cdgxjwwlw7mypam'
         s = script_obj_from_address(address)
         self.assertIsInstance(s, ScriptPayToAddressWit)
         self.assertEqual(address, s.address())
 
     def test_segwit_create_tx(self):
-        from pycoin.tx.tx_utils import create_tx, sign_tx
-        from pycoin.tx.Spendable import Spendable
-        from pycoin.tx.pay_to.ScriptPayToAddress import ScriptPayToAddress
-        from pycoin.tx.pay_to.ScriptPayToAddressWit import ScriptPayToAddressWit
-        from pycoin.ui import address_for_pay_to_script_wit, script_obj_from_address
+        from pycoinzpub.tx.tx_utils import create_tx, sign_tx
+        from pycoinzpub.tx.Spendable import Spendable
+        from pycoinzpub.tx.pay_to.ScriptPayToAddress import ScriptPayToAddress
+        from pycoinzpub.tx.pay_to.ScriptPayToAddressWit import ScriptPayToAddressWit
+        from pycoinzpub.ui import address_for_pay_to_script_wit, script_obj_from_address
         key1 = Key(1)
         coin_value = 5000000
         script = ScriptPayToAddressWit(b'\0', key1.hash160()).script()

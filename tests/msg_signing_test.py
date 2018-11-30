@@ -1,17 +1,17 @@
 import unittest
 
-from pycoin.contrib.msg_signing import parse_signed_message, verify_message
-from pycoin.key import Key
+from pycoinzpub.contrib.msg_signing import parse_signed_message, verify_message
+from pycoinzpub.key import Key
 
 
 def test_against_myself():
     """
     Test code that verifies against ourselves only. Useful but not so great.
     """
-    from pycoin.contrib.msg_signing import (
+    from pycoinzpub.contrib.msg_signing import (
             parse_signed_message, sign_message, verify_message)
-    from pycoin.encoding import bitcoin_address_to_hash160_sec_with_prefix
-    from pycoin.encoding import wif_to_tuple_of_secret_exponent_compressed
+    from pycoinzpub.encoding import bitcoin_address_to_hash160_sec_with_prefix
+    from pycoinzpub.encoding import wif_to_tuple_of_secret_exponent_compressed
 
     for wif, right_addr in [
                     ('L4gXBvYrXHo59HLeyem94D9yLpRkURCHmCwQtPuWW9m6o1X8p8sp',

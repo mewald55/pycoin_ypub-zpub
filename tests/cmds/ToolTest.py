@@ -9,7 +9,7 @@ try:
 except ImportError:
     from io import StringIO
 
-from pycoin.cmds import block, ku, msg, tx
+from pycoinzpub.cmds import block, ku, msg, tx
 
 
 DEFAULT_ENV = {

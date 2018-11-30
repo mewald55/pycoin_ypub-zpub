@@ -32,12 +32,12 @@ import unittest
 import json
 import os
 
-from pycoin.serialize import h2b_rev
-from pycoin.tx.Tx import Tx
-from pycoin.tx.exceptions import ValidationFailureError
-from pycoin.tx.Spendable import Spendable
-from pycoin.tx.script.tools import compile
-from pycoin.tx.script import flags
+from pycoinzpub.serialize import h2b_rev
+from pycoinzpub.tx.Tx import Tx
+from pycoinzpub.tx.exceptions import ValidationFailureError
+from pycoinzpub.tx.Spendable import Spendable
+from pycoinzpub.tx.script.tools import compile
+from pycoinzpub.tx.script import flags
 
 
 DEBUG_TX_ID_LIST = []

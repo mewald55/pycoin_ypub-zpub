@@ -12,24 +12,24 @@ import re
 import subprocess
 import sys
 
-from pycoin.convention import tx_fee, satoshi_to_mbtc
-from pycoin.encoding import hash160
-from pycoin.key import Key
-from pycoin.key.validate import is_address_valid
-from pycoin.networks import address_prefix_for_netcode, full_network_name_for_netcode, network_codes
-from pycoin.networks.default import get_current_netcode
-from pycoin.serialize import b2h_rev, h2b, h2b_rev, stream_to_bytes
-from pycoin.services import spendables_for_address, get_tx_db
-from pycoin.services.providers import message_about_tx_cache_env, \
+from pycoinzpub.convention import tx_fee, satoshi_to_mbtc
+from pycoinzpub.encoding import hash160
+from pycoinzpub.key import Key
+from pycoinzpub.key.validate import is_address_valid
+from pycoinzpub.networks import address_prefix_for_netcode, full_network_name_for_netcode, network_codes
+from pycoinzpub.networks.default import get_current_netcode
+from pycoinzpub.serialize import b2h_rev, h2b, h2b_rev, stream_to_bytes
+from pycoinzpub.services import spendables_for_address, get_tx_db
+from pycoinzpub.services.providers import message_about_tx_cache_env, \
     message_about_tx_for_tx_hash_env, message_about_spendables_for_address_env
-from pycoin.tx.exceptions import BadSpendableError
-from pycoin.tx.script.tools import opcode_list, disassemble_for_opcode_data
-from pycoin.tx.script.check_signature import parse_signature_blob
-from pycoin.tx.script.der import UnexpectedDER
-from pycoin.tx.script.disassemble import disassemble_scripts, sighash_type_to_string
-from pycoin.tx.tx_utils import distribute_from_split_pool, sign_tx
-from pycoin.tx.Tx import Spendable, Tx, TxOut
-from pycoin.ui import standard_tx_out_script
+from pycoinzpub.tx.exceptions import BadSpendableError
+from pycoinzpub.tx.script.tools import opcode_list, disassemble_for_opcode_data
+from pycoinzpub.tx.script.check_signature import parse_signature_blob
+from pycoinzpub.tx.script.der import UnexpectedDER
+from pycoinzpub.tx.script.disassemble import disassemble_scripts, sighash_type_to_string
+from pycoinzpub.tx.tx_utils import distribute_from_split_pool, sign_tx
+from pycoinzpub.tx.Tx import Spendable, Tx, TxOut
+from pycoinzpub.ui import standard_tx_out_script
 
 DEFAULT_VERSION = 1
 DEFAULT_LOCK_TIME = 0
@@ -50,7 +50,7 @@ def range_int(min, max, name):
 
 def validate_bitcoind(tx, tx_db, bitcoind_url):
     try:
-        from pycoin.services.bitcoind import bitcoind_agrees_on_transaction_validity
+        from pycoinzpub.services.bitcoind import bitcoind_agrees_on_transaction_validity
         if bitcoind_agrees_on_transaction_validity(bitcoind_url, tx):
             print("interop test passed for %s" % tx.id(), file=sys.stderr)
         else:
@@ -81,7 +81,7 @@ def make_trace_script(do_trace, use_pdb):
         return None
 
     def trace_script(pc, opcode, data, stack, altstack, if_condition_stack, is_signature):
-        from pycoin.serialize import b2h
+        from pycoinzpub.serialize import b2h
         print("stack: [%s]" % ' '.join(b2h(s) for s in stack))
         if len(altstack) > 0:
             print("altstack: %s" % altstack)

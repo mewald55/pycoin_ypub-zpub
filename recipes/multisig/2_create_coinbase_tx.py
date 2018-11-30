@@ -5,9 +5,9 @@
 
 import sys
 
-from pycoin.key.validate import is_address_valid
-from pycoin.tx.Tx import Tx, TxIn, TxOut
-from pycoin.ui import standard_tx_out_script
+from pycoinzpub.key.validate import is_address_valid
+from pycoinzpub.tx.Tx import Tx, TxIn, TxOut
+from pycoinzpub.ui import standard_tx_out_script
 
 
 def main():

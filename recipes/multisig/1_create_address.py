@@ -6,10 +6,10 @@
 import os
 import sys
 
-from pycoin.key.BIP32Node import BIP32Node
-from pycoin.serialize import b2h
-from pycoin.ui import address_for_pay_to_script
-from pycoin.tx.pay_to.ScriptMultisig import ScriptMultisig
+from pycoinzpub.key.BIP32Node import BIP32Node
+from pycoinzpub.serialize import b2h
+from pycoinzpub.ui import address_for_pay_to_script
+from pycoinzpub.tx.pay_to.ScriptMultisig import ScriptMultisig
 
 
 def main():

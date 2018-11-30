@@ -2,7 +2,7 @@
 import unittest
 
 # local modules
-from pycoin.serialize import h2b, h2b_rev, b2h, b2h_rev
+from pycoinzpub.serialize import h2b, h2b_rev, b2h, b2h_rev
 
 
 class SerializeTest(unittest.TestCase):

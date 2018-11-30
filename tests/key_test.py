@@ -1,7 +1,7 @@
 import unittest
 
-from pycoin.key import Key
-from pycoin.serialize import h2b
+from pycoinzpub.key import Key
+from pycoinzpub.serialize import h2b
 
 
 class KeyTest(unittest.TestCase):

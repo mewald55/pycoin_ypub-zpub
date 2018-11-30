@@ -1,9 +1,9 @@
 import hashlib
 import unittest
 
-from pycoin.ecdsa.secp256k1 import secp256k1_generator
-from pycoin.ecdsa.intstream import to_bytes, from_bytes
-from pycoin.ecdsa.rfc6979 import deterministic_generate_k
+from pycoinzpub.ecdsa.secp256k1 import secp256k1_generator
+from pycoinzpub.ecdsa.intstream import to_bytes, from_bytes
+from pycoinzpub.ecdsa.rfc6979 import deterministic_generate_k
 
 
 class ECDSATestCase(unittest.TestCase):

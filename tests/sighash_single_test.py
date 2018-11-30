@@ -1,16 +1,16 @@
 import unittest
-from pycoin.ecdsa.secp256k1 import secp256k1_generator
-from pycoin.encoding import (
+from pycoinzpub.ecdsa.secp256k1 import secp256k1_generator
+from pycoinzpub.encoding import (
     int2byte,
     to_bytes_32,
 )
-from pycoin.key import Key
-from pycoin.serialize import (
+from pycoinzpub.key import Key
+from pycoinzpub.serialize import (
     b2h,
     b2h_rev,
 )
-from pycoin.ui import standard_tx_out_script
-from pycoin.tx.Tx import (
+from pycoinzpub.ui import standard_tx_out_script
+from pycoinzpub.tx.Tx import (
     Tx,
     TxIn,
     TxOut,
@@ -18,11 +18,11 @@ from pycoin.tx.Tx import (
     SIGHASH_ANYONECANPAY,
     SIGHASH_SINGLE,
 )
-from pycoin.tx.script.der import (
+from pycoinzpub.tx.script.der import (
     sigdecode_der,
     sigencode_der,
 )
-from pycoin.tx.script.tools import compile as pycoin_compile
+from pycoinzpub.tx.script.tools import compile as pycoin_compile
 
 PRIV_KEYS = (
     2330949616242593315303241053456316633827293588958882755297900732239663851861,

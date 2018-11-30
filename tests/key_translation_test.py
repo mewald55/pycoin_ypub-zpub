@@ -1,13 +1,13 @@
 import unittest
 
-from pycoin.ecdsa.secp256k1 import secp256k1_generator
+from pycoinzpub.ecdsa.secp256k1 import secp256k1_generator
 
-from pycoin.encoding import (
+from pycoinzpub.encoding import (
     bitcoin_address_to_hash160_sec, is_sec_compressed, public_pair_to_sec, secret_exponent_to_wif,
     public_pair_to_bitcoin_address, wif_to_tuple_of_secret_exponent_compressed, sec_to_public_pair,
     public_pair_to_hash160_sec
 )
-from pycoin.serialize import h2b
+from pycoinzpub.serialize import h2b
 
 """
 http://sourceforge.net/mailarchive/forum.php?thread_name=CAPg%2BsBhDFCjAn1tRRQhaudtqwsh4vcVbxzm%2BAA2OuFxN71fwUA%40mail.gmail.com&forum_name=bitcoin-development

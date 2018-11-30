@@ -1,17 +1,17 @@
 import io
 import copy
 import unittest
-from pycoin.cmds.tx import DEFAULT_VERSION
-from pycoin.key import Key
-from pycoin.serialize import h2b
-from pycoin.tx import tx_utils
-from pycoin.tx.Spendable import Spendable
-from pycoin.tx.Tx import Tx, TxIn, TxOut, SIGHASH_ALL
-from pycoin.tx.tx_utils import LazySecretExponentDB
-from pycoin.tx.pay_to import ScriptMultisig, ScriptPayToPublicKey, ScriptNulldata
-from pycoin.tx.pay_to import build_hash160_lookup, build_p2sh_lookup, script_obj_from_script
-from pycoin.tx.script import tools
-from pycoin.ui import address_for_pay_to_script, standard_tx_out_script, script_obj_from_address
+from pycoinzpub.cmds.tx import DEFAULT_VERSION
+from pycoinzpub.key import Key
+from pycoinzpub.serialize import h2b
+from pycoinzpub.tx import tx_utils
+from pycoinzpub.tx.Spendable import Spendable
+from pycoinzpub.tx.Tx import Tx, TxIn, TxOut, SIGHASH_ALL
+from pycoinzpub.tx.tx_utils import LazySecretExponentDB
+from pycoinzpub.tx.pay_to import ScriptMultisig, ScriptPayToPublicKey, ScriptNulldata
+from pycoinzpub.tx.pay_to import build_hash160_lookup, build_p2sh_lookup, script_obj_from_script
+from pycoinzpub.tx.script import tools
+from pycoinzpub.ui import address_for_pay_to_script, standard_tx_out_script, script_obj_from_address
 
 
 def const_f(v):

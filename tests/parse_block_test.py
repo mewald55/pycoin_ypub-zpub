@@ -1,8 +1,8 @@
 import io
 import unittest
 
-from pycoin.block import Block
-from pycoin.serialize import b2h_rev, h2b
+from pycoinzpub.block import Block
+from pycoinzpub.serialize import b2h_rev, h2b
 
 
 class BlockTest(unittest.TestCase):

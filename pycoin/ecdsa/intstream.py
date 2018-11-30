@@ -1,5 +1,5 @@
 
-from pycoin.intbytes import iterbytes, byte2int
+from pycoinzpub.intbytes import iterbytes, byte2int
 
 
 def _to_bytes(v, length, byteorder="big"):

@@ -2,10 +2,10 @@ import unittest
 import os
 import tempfile
 
-from pycoin.cmds import tx
-from pycoin.key import Key
-from pycoin.serialize import h2b
-from pycoin.tx.Tx import Tx
+from pycoinzpub.cmds import tx
+from pycoinzpub.key import Key
+from pycoinzpub.serialize import h2b
+from pycoinzpub.tx.Tx import Tx
 
 from .ToolTest import ToolTest
 
